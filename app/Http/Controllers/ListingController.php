@@ -27,7 +27,7 @@ class ListingController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Listing/Create');
     }
 
     /**
@@ -38,7 +38,19 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $listing = new Listing();
+        $listing->beds = $request->beds;
+        $listing->baths = $request->baths;
+        $listing->area = $request->area;
+        $listing->city = $request->city;
+        $listing->code = $request->code;
+        $listing->street = $request->street;
+        $listing->street_nr = $request->street_nr;
+        $listing->price = $request->price;
+        $listing->save();
+
+        return redirect()->route('listing.index')
+            ->with('success', 'Listing created successfully.');
     }
 
     /**
