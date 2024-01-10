@@ -34,7 +34,7 @@ class ListingController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -50,7 +50,7 @@ class ListingController extends Controller
         $listing->save();
 
         return redirect()->route('listing.index')
-            ->with('success', 'Listing created successfully.');
+            ->with('success', 'Listing created created!.');
     }
 
     /**
