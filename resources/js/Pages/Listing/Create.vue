@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div>
+            <div>1
                 <label>Area</label>
                 <input v-model.number="form.area" type="text" />
                 <div v-if="form.errors.area">
