@@ -87,7 +87,7 @@ import { useForm } from '@inertiajs/vue3'
     })
 
     const create = () => {
-        form.post('/listing')
+        form.post(route('listing.store'))
     }
 
 </script>
