@@ -15,14 +15,11 @@ class UserAccountController extends Controller
 
     public function store(Request $request)
     {
-        $user = User::make($request->validate([
+        $user = User::create($request->validate([
             'name' => 'required|min:3',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8|confirmed'
         ]));
-
-        $user->password = bcrypt($user->password);
-        $user->save();
         Auth::login($user);
 
         return redirect()->route('listing.index')
