@@ -61,8 +61,8 @@
 
 <script setup>
 import ListingAddress from "@/Pages/Components/ListingAddress.vue";
-import Price from "@/Pages/Components/UI/Price.vue";
-import ListingSpace from "@/Pages/Components/UI/ListingSpace.vue";
+import Price from "@/Pages/Components/Price.vue";
+import ListingSpace from "@/Pages/Components/ListingSpace.vue";
 import Box from "@/Pages/Components/UI/Box.vue";
 
 import {ref} from "vue";
