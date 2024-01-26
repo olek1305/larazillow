@@ -136,11 +136,4 @@ class ListingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Listing $listing)
-    {
-        $listing->delete();
-
-        return redirect()->back()
-            ->with('success', 'Listing was deleted!');
-    }
 }

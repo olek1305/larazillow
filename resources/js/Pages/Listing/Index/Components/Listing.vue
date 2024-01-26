@@ -16,10 +16,6 @@
             <!--            <Link :href="`/listing/${listing.id}/edit`">Edit</Link>-->
             <Link :href="route('listing.edit', {listing: listing.id})">Edit</Link>
         </div>
-        <div>
-            <!--            <Link :href="`/listing/${listing.id}`" method="DELETE" as="button">Delete</Link>-->
-            <Link :href="route('listing.update', {listing: listing.id})" method="DELETE" as="button">Delete</Link>
-        </div>
     </Box>
 </template>
 <script setup>
