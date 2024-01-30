@@ -87,16 +87,7 @@ import { useForm } from '@inertiajs/vue3'
     })
 
     const create = () => {
-        form.post(route('listing.store'))
+        form.post(route('realtor.listing.store'))
     }
 
 </script>
-
-<style scoped>
-label {
-    margin-right: 2em;
-}
-div {
-    padding: 2px
-}
-</style>

@@ -14,7 +14,7 @@
         </div>
         <div>
             <!--            <Link :href="`/listing/${listing.id}/edit`">Edit</Link>-->
-            <Link :href="route('listing.edit', {listing: listing.id})">Edit</Link>
+            <Link :href="route('realtor.listing.edit', {listing: listing.id})">Edit</Link>
         </div>
     </Box>
 </template>

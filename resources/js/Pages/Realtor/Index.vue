@@ -15,11 +15,14 @@
                     <ListingAddress :listing="listing" />
                 </div>
                 <div class="flex items-center gap-1 text-gray-600 dark:text-gray-300">
-                    <Link class="btn-outline text-xs font-medium"
+                    <a class="btn-outline text-xs font-medium"
+                       :href="route('listing.show', { listing: listing.id })"
+                       target="_blank"
                     >
                         Preview
-                    </Link>
+                    </a>
                     <Link class="btn-outline text-xs font-medium"
+                          :href="route('realtor.listing.edit' , { listing: listing.id })"
                     >
                         Edit
                     </Link>
@@ -45,7 +48,7 @@ import Price from "@/Pages/Components/Price.vue";
 import ListingSpace from "@/Pages/Components/ListingSpace.vue";
 import ListingAddress from "@/Pages/Components/ListingAddress.vue";
 import RealtorFilters from "@/Pages/Realtor/Index/Components/RealtorFilters.vue";
-import {Link} from "@inertiajs/vue3";
+import {Link, router} from "@inertiajs/vue3";
 import Pagination from "@/Pages/Components/UI/Pagination.vue";
 
 
