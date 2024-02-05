@@ -38,6 +38,11 @@ class Listing extends Model
         return $this->HasMany(ListingImage::class);
     }
 
+    public function offers(): HasMany
+    {
+        return $this->HasMany(Offer::class, 'listing_id');
+    }
+
     public function scopeMostRecent(Builder $query): Builder
     {
         return $query->orderByDesc('created_at');
