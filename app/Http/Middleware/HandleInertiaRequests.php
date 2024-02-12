@@ -34,6 +34,19 @@ class HandleInertiaRequests extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
+
+//    public function share(Request $request): array
+//    {
+//        return array_merge(parent::share($request), [
+//            'flash' => [
+//                'success' => fn () => $request->session()->get('success')
+//            ],
+//            'user' => fn () => $request->user()
+//                ? $request->user()->only('id', 'name', 'email', 'notificationCount')
+//                : null,
+//        ]);
+//    }
+
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
@@ -41,7 +54,9 @@ class HandleInertiaRequests extends Middleware
                 'success' => fn () => $request->session()->get('success')
             ],
             'user' => fn () => $request->user()
-                ? $request->user()->only('id', 'name', 'email')
+                ? array_merge($request->user()->only('id', 'name', 'email'), [
+                    'notificationCount' => $request->user()->unreadNotifications()->count()
+                ])
                 : null,
         ]);
     }
