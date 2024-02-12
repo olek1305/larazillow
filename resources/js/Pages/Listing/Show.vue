@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col-reverse md:grid md:grid-cols-12 gap-4">
         <Box v-if="listing.images.length" class="md:col-span-7 flex items-center">
-            <div  lass="grid grid-cols-2 gap-1">
+            <div class="grid grid-cols-2 gap-1">
                 <img
                     v-for="image in listing.images"
                     :key="image.id"
