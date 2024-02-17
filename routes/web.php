@@ -24,9 +24,9 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', [IndexController::class,'index']);
-Route::get('/hello', [IndexController::class,'show']);
+Route::fallback(function () {
+    return redirect()->route('listing.index');
+});
 
 Route::resource('listing', ListingController::class)
     ->only(['index', 'show']);
