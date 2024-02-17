@@ -38,7 +38,7 @@ class RealtorListingImageController extends Controller
         return redirect()->back()->with('success', 'Images uploaded!');
     }
 
-    public function destroy(ListingImage $image)
+    public function destroy($listing, ListingImage $image)
     {
         Storage::disk('public')->delete($image->filename);
         $image->delete();
